@@ -8,7 +8,7 @@ from tika import parser
 import sys
 
 #outputs a txt file called AppellateOpinionLegalData.txt with all of the dowloaded pdf court opinion documents
-#to run: python3 python3 appellateScrape.py
+#to run: python3 appellateScrape.py
 
 class ScrapingDataToTxt():
     def __init__(self, directory):
