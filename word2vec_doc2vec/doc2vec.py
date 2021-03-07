@@ -4,7 +4,7 @@ import pandas as pd
 import sys
 
 '''
-Embedding the appellate data or the complaint data using doc2vec
+Embedding the appellate data or the complaint data using pretrained doc2vec
 First parameter is the data that needs to be embedded
 The second parameter is the file that contains a pretrained doc2vec model.
 This script turns the documents into lower dimensional vectors by applying a pretraiend model to it.
