@@ -12,8 +12,8 @@ Second column is the number of times the word appears in the granted documents. 
 the number of times the word appears in the denied documents. Fourth column is the total number of times
 the word appears throughout all the documents. Fifth column is a statistic that the simple function outputs.
 
-The command for running this script is the following: python3 name_of_this_script.py your_data your_cutoff_score. For training, suggested cutoff value for rule making
-is 0. With cross validation on out data, best cuttoff score is 0.2
+The command for running this script is the following: python3 name_of_this_script.py your_data your_cutoff_score. For training, suggested cutoff value 
+for rule making is 0. With cross validation on our data, best cuttoff score is 0.2
 '''
 
 def Simple(trainingData, cutoff):
