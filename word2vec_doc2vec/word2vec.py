@@ -5,8 +5,11 @@ import numpy as np
 import pickle
 import sys
 
-''' Applies pretrained word2vec on data and returns a pickled dictionary
+''' Applies pretrained word2vec on complain documents or appellate court opinions and returns a pickled dictionary
     with the word as the key and the vector as the value
+    
+    to run: python3 word2vec.py your_data pretrained_model
+    
 '''
 def word2vec(data, model):
     m = gensim.models.Word2Vec.load(model)
