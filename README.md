@@ -4,6 +4,27 @@
 
 ## word2vec_doc2vec
 
+Will scrape appellate court opinions in the form of pdfs off of the State of Connecticut Judicial Branch website and will add the contents of the files into a single txt file in the form of ```[/path/to/AppellateOpinionLegalData.txt]```
+```
+pthon3 appellateScrape.py
+```
+Lemmatizes and tokenizes the words in the documents and output a new file in the form of ```[/path/to/Appellate_Opinion_To_Be_Embedded.csv]```
+```
+python3 appellateDataPrep.py /path/to/AppellateOpinionLegalData.txt
+```
+Applies the doc2vec pretrained model on the new file
+```
+python3 doc2vec.py /path/to/Appellate_Opinion_To_Be_Embedded.csv /path/to/pretrained doc2vec models
+```
+Applies the word2vec pretrained model on the new file
+```
+python3 word2vec.py /path/to/Appellate_Opinion_To_Be_Embedded.csv /path/to/pretrained word2vec models
+```
+Applies the word2vec pretrained model on the rules from the sequential covering algorithm
+```
+python3 word2vec_rules.py /path/to/rules /path/to/pretrained word2vec models
+```
+
 ##  model_data 
 
 ### adding_dm script
