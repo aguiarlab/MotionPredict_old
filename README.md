@@ -9,7 +9,7 @@ python3 TrainingTestingSplit.py /path/to/corpus
 
 Runs the sequential covering algorithm on the training data. Second parameter is the specified cuttoffscore found from cross validation. Third parameter is either "foil" or "simple" to run on those conditions. Outputs a csv file containing the rules in the form of ```[/path/to/Simple_Rules_.csv]``` or ```[/path/to/Foil_Rules_.csv]``` depending on the third parameter.
 ```
-python3 sca.py /path/to/TrainingData.csv 0 simple
+python3 sca.py /path/to/TrainingData.csv 0.2 simple
 ```
 Classifies documents in the testing data. Will output file in the form of ```[/path/to/Simple_classifier_.csv]``` or ```[/path/to/Foil_classifier_.csv]``` depending on the third parameter. 
 ```
