@@ -119,3 +119,7 @@ python3 bootstrap.py /path/to/motionStrike_TVcodes_data.tsv.gz [0-6] ['minimal',
 ```
 
 The output for this scirpt is stderr and stdout and will out output the 100 bootstraps for each model in the stdout file.
+
+### *.pickle files
+
+All the *.pickle files contain the best parameters that we found for our models, per model, feature set, rules, and data set
