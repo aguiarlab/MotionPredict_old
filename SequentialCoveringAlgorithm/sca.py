@@ -18,7 +18,7 @@ the word appears throughout all the documents. Fifth column is a statistic that 
 The command for running this script is the following: python3 name_of_this_script.py your_data your_cutoff_score which_equation_to_use
 
 the type argument is inputted as either "simple" or "foil"
-ex) python3 sca.py 0 simple
+ex) python3 sca.py TrainingData.csv 0 simple
 '''
 def Training_Rules(trainingData, cutoff, type):
     #This reads the training data as a csv and turns it into a pandas dataframe that is seperated by tabs.
