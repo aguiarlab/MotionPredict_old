@@ -71,12 +71,23 @@ Stdout will have the train and test accuracy from the best parameters.
 
 When running the model split the output so stderr goes to a .err file and the input goes to a .out file with the same root name.
 
-### pul_params script
+### pull_params script
 
-This script is using the ouput from the 
+This script is using the ouput from the classifiers script to pull the best scoring parameters from the machine learning models.
+Argument 1 path to the output files from classifiers.py
+Argument 2 if the sequential covering algorithm was used or not (rules or no rules) [-r, -nr]
+Argumetn 3 the name you want for the output of the best parameters
+
+The script can be ran as followed:
 ```
 python3 pull_params.py /path/to/errorAndOutFiles/ [-r,-nr] output_dictionary_params.pickle
 ```
+
+The output will be a dictionary containing the best parameters for each model, feature set, rules, and data set (database or dm)
+
+### bootstrap script
+
+This script will run 100 bootstraps of the model you desire with the feature set you want.
 
 ```
 python3 bootstrap.py /path/to/motionStrike_TVcodes_data.tsv.gz [0-6] ['minimal','subset','full'] output_dictionary_params.pickle
