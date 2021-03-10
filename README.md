@@ -14,7 +14,7 @@ This script can be ran as the following:
 ```
 python3 adding_dm.py /path/to/motionStrike_TVcodes_data.tsv.gz
 ```
-The output from this code will be a new file in the form ['''/path/to/motionStrike_TVcodes_data_dm.tsv.gz''']
+The output from this code will be a new file in the form [```/path/to/motionStrike_TVcodes_data_dm.tsv.gz```]
 
 ```
 python3 adding_w2v_d2v.py /path/to/strikemotion_code_T_V_complaint_doc_ocr.txt.gz /path/to/motionStrike_TVcodes_data.tsv.gz /path/to/judcaseid_docid_translationtable.tsv.gz /path/to/rules/simple_Rules.csv /path/to/rules/foil_Rules.csv /path/to/word2vec/ /path/to/doc2vec/ /path/to/motionStrike_TVcodes_data_dm.tsv.gz
