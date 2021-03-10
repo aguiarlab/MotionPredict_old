@@ -22,7 +22,7 @@ python3 classification_accuracy.py /path/to/TestingData.csv /path/to/Simple_clas
 
 ## word2vec_doc2vec
 
-Will scrape appellate court opinions in the form of pdfs off of the State of Connecticut Judicial Branch website and will add the contents of the files into a single txt file in the form of ```[/path/to/AppellateOpinionLegalData.txt]```.
+Scrapes appellate court opinions off of the State of Connecticut Judicial Branch website and adds the contents of the files into a new file in the form of ```[/path/to/AppellateOpinionLegalData.txt]```.
 ```
 pthon3 appellateScrape.py
 ```
