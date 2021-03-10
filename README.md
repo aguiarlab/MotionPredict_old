@@ -1,5 +1,9 @@
 # MotionPredict
 
+All code in this repository was used in the manuscript - MotionPredict: Case-level Prediction of Motion Outcomes in Civil Litigation.<br>
+
+Upon approval of CT Judical Branch a subset of our data will be provided for testing and exploritary use.<br>
+
 ## SequentialCoveringAlgorithm
 
 Will split the data 80% for training and 20% for testing. Outputs 2 files: ```/path/to/TrainingData.csv``` and ```/path/to/TestingData.csv```
