@@ -9,7 +9,7 @@ import sys
     with the rule as the key and the vector as the value
     
     to run: python3 word2vec_rules.py your_data pretrained_model
-    ie) python temp2.py Rules_FOIL_.csv apnews_sg/word2vec.bin
+    ie) python3 word2vec_rules.py Rules_FOIL_.csv apnews_sg/word2vec.bin
 '''
 def word2vec(rules, model):
     m = gensim.models.Word2Vec.load(model)
