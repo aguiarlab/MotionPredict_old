@@ -392,11 +392,9 @@ if __name__ == '__main__':
 
     file_name = data.lower()
     x = ''
-    if '_AFBBE_' in data or '\AFBBE_' in data:
-        x = 'AFBBE'
-    elif '_BBE_' in data or '\BBE_' in data:
+    if '_dm_' in data or '_dm.' in data:
         x = 'BBE'
-    elif ('_AFBBE_' not in data and '_BBE_' not in data) or ('\AFBBE_' not in data and '\BBE_' not in data):
+    elif ('_dm_' not in data and '_dm.' not in data):
         x = 'og'
 
     rule = ''
