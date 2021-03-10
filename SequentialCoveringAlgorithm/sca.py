@@ -60,10 +60,6 @@ def Training_Rules(trainingData, cutoff, type):
     print("total words: ", len(listDecomposedWords))
     dfWords = pd.DataFrame(listDecomposedWords)
     dfWords.columns = [c0,'word',c2]
-    #This is needed for the Foil Information Gain. The constant is a reference needed for the function.
-    # numOfGRDocs = GR_DN_nlp_training[GR_DN_nlp_training.MotionResultCode == 'GR'].shape[0]
-    # totalDocCount = GR_DN_nlp_training.shape[0]
-    # constant = (numOfGRDocs / totalDocCount)
 
     '''
     This block of code implements the Sequential Covering Algorithm.
