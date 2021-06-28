@@ -1,9 +1,9 @@
+import time
+import concurrent.futures
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import os
 import requests
-import pandas as pd
-import os
 from tika import parser
 import sys
 
@@ -36,32 +36,38 @@ class ScrapingDataToTxt():
                 except AttributeError:
                     continue
 
-    def PdfDownload(self):
-        #access the documents through url and downloads the content to a local directory called LawPdfFilesScraped
-        print("creating list of urls....")
+
+    def listURL(self):
         urls = []
         pages = []
         for i in range(21):
             pages.append("%02d" % i)
         for n in pages:
             urls.append(f"https://jud.ct.gov/external/supapp/archiveAROap{n}.htm")
+        return urls
+
+
+    def PdfDownload(self, url):
+        #access the documents through url and downloads the content to a local directory called LawPdfFilesScraped
+        print("creating list of urls....")
 
         folder_location = "{}".format(self.directory)
-        os.mkdir(folder_location)
+        if not os.path.isdir(self.directory):
+            os.mkdir(folder_location)
         print("accessing url....")
-        for url in urls:
-            response = requests.get(url)
-            soup = BeautifulSoup(response.text, "html.parser")
-            print("downloading files from website....")
-            for link in soup.select("a[href$='.pdf']"):
-                filename = os.path.join(folder_location,link["href"].split('/')[-1])
-                with open(filename, "wb") as f:
-                    f.write(requests.get(urljoin(url,link["href"])).content)
-
-        self.pdfToTxt()
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, "html.parser")
+        print("downloading files from website....")
+        for link in soup.select("a[href$='.pdf']"):
+            filename = os.path.join(folder_location,link["href"].split('/')[-1])
+            with open(filename, "wb") as f:
+                f.write(requests.get(urljoin(url,link["href"])).content)
 
 
 
 if __name__ == '__main__':
     prepData = ScrapingDataToTxt("./LawPdfFilesScraped")
-    prepData.PdfDownload()
+    pdf_urls = prepData.listURL()
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        executor.map(prepData.PdfDownload, pdf_urls)
+    prepData.pdfToTxt()
