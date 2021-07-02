@@ -67,6 +67,11 @@ def Training_Rules(trainingData, cutoff, type):
     Finish_run = False
     print("creating rules....")
     countRules = 0
+    #for foil
+    numOfGRDocs = dfWords[dfWords.MotionResultCode == 'GR'].shape[0]
+    totalDocCount = dfWords.shape[0]
+    constant = (numOfGRDocs / totalDocCount)
+    #seq_cov start
     while not Finish_run:
         dfGRwords = dfWords[dfWords[c2] == 'GR']
         if dfGRwords.shape[0] == 0:
@@ -91,9 +96,6 @@ def Training_Rules(trainingData, cutoff, type):
         np.seterr(divide = 'ignore')
         #foil or simple
         if type == "foil":
-            numOfGRDocs = dfWords[dfWords.MotionResultCode == 'GR'].shape[0]
-            totalDocCount = dfWords.shape[0]
-            constant = (numOfGRDocs / totalDocCount)
             GRstat = (mergedFrames.GR_count / mergedFrames.Total_Count)
             #FOIL Info-Gain Function:
             mergedFrames['function'] = (mergedFrames.GR_count)*(np.log2(GRstat) - math.log2(constant))
