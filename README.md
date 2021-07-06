@@ -11,13 +11,13 @@ python3 scap.py splitdata
 ```
 It creates 2 directories. One is called TrainTest which contains training and testing data. The other is called CrossValidationData which contains kfold cross validation data.
 
-To run cross validation 
+Takes in 2 inputs: CV and a criteria. To run cross validation 
 ```
 python3 sca.py CV simple
 ``` 
 Will print suggested threshold to stop making rules. Will also output directories containing results.txt files that have threshold and its respective calculated accuracy.
 
-To run the final training data on the test data run: 
+Takes in 3 inputs: training data, threshold to stop making rules, and criteria. To run the final training data on the test data run: 
 ```
 python3 sca.py ./DataPrep/TrainTest/TrainingData.csv 0.6 simple
 ```
