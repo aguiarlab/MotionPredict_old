@@ -21,7 +21,7 @@ To run the final training data on the test data run:
 ```
 python3 sca.py ./DataPrep/TrainTest/TrainingData.csv 0.6 simple
 ```
-Will also create directory containg rules in a txt file as well as prints the classification accuracy.
+Will also create directory containing rules in a txt file as well as prints the classification accuracy.
 
 ## word2vec_doc2vec
 
